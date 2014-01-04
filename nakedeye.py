@@ -45,10 +45,12 @@ def parseData():
     dist_gal_center = dist*dot_gal_center
     dist_gal_npole = dist*dot_gal_npole
     # need to clean up the crazy distances here.
+    # namely, convert to ecliptic coordinates (astropy), then 
+    # cut out points near the ecliptic.
+    #ipdb.set_trace()
 
-
-
-    wh=np.where(mag<10)[0]
+    wh=np.where((mag<6)&(np.abs(dec)>30.))[0]
+    wh=np.where((mag<6))[0]
     minx=-5;maxx=30.
     miny=-1.;maxy=1.
     ratio = 1.*(maxx-minx)/(maxy-miny)
