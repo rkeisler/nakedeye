@@ -97,9 +97,9 @@ def draw_galaxy(ax):
         ax.add_patch(Ellipse(xy=(d_right_m31,d_up_m31), width=w, height=h, angle=-30, color='white', alpha=alpha))
 
     # bulge
-    alpha=0.06
+    alpha=0.07
     nell = 5
-    for w,h in zip(1.3*np.linspace(4,8,nell), np.linspace(4,8,nell)):
+    for w,h in zip(1.4*1.3*np.linspace(4,8,nell), 1.4*np.linspace(4,8,nell)):
         ax.add_patch(Ellipse(xy=(d_right_m31,d_up_m31), width=w, height=h, angle=-30, color='white', alpha=alpha))
 
 
@@ -179,7 +179,11 @@ def plot_stars(ax, d_right, d_up, mag, mag_min=0, mag_max=3.0,
 
 def initialize_figure():
     aratio = 2.3
-    sf = 5.5
+    sf = 5.2
+
+    aratio = 1.9
+    sf = 6.5
+
     #minx=-6;maxx=33.5
     minx=-2.9;maxx=2.9
     miny=-0.5*(maxx-minx)/aratio;
