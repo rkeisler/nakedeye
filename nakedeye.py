@@ -49,7 +49,7 @@ def draw_galaxy(ax):
     nell = 5
     for w,h in zip(1.3*np.linspace(4,8,nell), np.linspace(4,8,nell)):
         ax.add_patch(Ellipse(xy=(klyr_to_center,0), width=w, height=h, angle=0, color='white', alpha=alpha))
-    text_rectangle(klyr_to_center+0.1, 0.3, charwidth, fontsize, textcolor, yspacing, 'The center of the Milky Way is about 30,000 light-years away, and the light we see from it today was emitted around the time that humans developed agriculture.')
+    text_rectangle(klyr_to_center+0.1, 0.3, charwidth, fontsize, textcolor, yspacing, 'The center of the Milky Way is about 30,000 light-years away, and the light we see from it today was emitted around the time that humans began farming.')
 #   during the Upper Paleolithic, when humans were not yet farming but beginning to produce art')
 #   when early humans were painting in caves but not yet farming.')
 
@@ -69,8 +69,8 @@ def draw_galaxy(ax):
     nell = 5
     for w,h in zip(np.linspace(0.3*diam_klyr_lmc,diam_klyr_lmc,nell), np.linspace(0.3*diam_klyr_lmc,diam_klyr_lmc,nell)):
         ax.add_patch(Ellipse(xy=(d_right_lmc,d_up_lmc), width=w, height=h, angle=0, color='white', alpha=alpha))
-    text_rectangle(d_right_lmc+0.1, d_up_lmc+1.3, charwidth, fontsize, textcolor, yspacing, "The Large Magellanic Cloud is a dwarf galaxy and one of the Milky Way's satellites.  It's located about 160,000 light-years from Earth.")
-    text_rectangle(d_right_lmc+0.1, d_up_lmc+0.3, charwidth, fontsize, textcolor, yspacing, "Note that many of the objects shown here are even farther away than they appear to be.  You just can't see the distances into and out of the screen.")
+    text_rectangle(d_right_lmc+0.1, d_up_lmc+1.6, charwidth, fontsize, textcolor, yspacing, "The Large Magellanic Cloud is a dwarf galaxy and one of the Milky Way's satellites.  It's located about 160,000 light-years from Earth.")
+    text_rectangle(d_right_lmc+0.1, d_up_lmc+0.65, charwidth, fontsize, textcolor, yspacing, "Note that many of the objects shown on this page are even farther away than they appear to be.  You just can't see the distances into and out of the screen.")
 
 
     # smc
@@ -110,12 +110,17 @@ def draw_galaxy(ax):
     nell = 5
     for w,h in zip(1.4*1.3*np.linspace(4,8,nell), 1.4*np.linspace(4,8,nell)):
         ax.add_patch(Ellipse(xy=(d_right_m31,d_up_m31), width=w, height=h, angle=-30, color='white', alpha=alpha))
-    x0=-1.75
-    text_rectangle(d_right_m31+x0, d_up_m31+2.2, charwidth, fontsize, textcolor, yspacing, "The Andromeda Galaxy is the nearest spiral galaxy to the Milky Way but is still very far away, about 2.5 million light-years.  It is by far the most distanct object visible to the naked eye, and the light we see from it was produced way back hominids were first learning to use stone tools.")
+    #x0=-1.75
+    #y0=d_up_m31+2.2
+    x0=-2.32
+    y0=d_up_m31+1.2
+    text_rectangle(d_right_m31+x0, y0, charwidth, fontsize, textcolor, yspacing, "The Andromeda Galaxy is the nearest spiral galaxy to the Milky Way but is still very far away, about 2.5 million light-years.  It is by far the most distanct object visible to the naked eye, and the light we see from it was produced way back hominids were first learning to use stone tools.")
 
-    text_rectangle(d_right_m31+x0, d_up_m31+0.6, charwidth, fontsize, textcolor, yspacing, "It's incredible that, thanks to some fluke of physics and evolution, we can see this far with our eyeballs!")
+    text_rectangle(d_right_m31+x0, y0-1.6, charwidth, fontsize, textcolor, yspacing, "It's incredible that, thanks to some fluke of physics and evolution, we can see this far with our eyeballs!")
 
-    text_rectangle(d_right_m31+x0, d_up_m31-0.1, charwidth, fontsize, textcolor, yspacing, "Modern telescopes allow us to see much, much farther, but this is the end of the line for objects visible to the naked eye, and for this page.  I promise that, no matter how much you zoom out, you will never never get to the Cosmic Microwave Background.")
+    #x=d_right_m31+x0; y=d_up_m31-0.1
+    x=d_right_m31+0.25; y=y0-1.6#d_up_m31-1.1
+    text_rectangle(x, y, charwidth, fontsize, textcolor, yspacing, "Modern telescopes allow us to see much, much farther, but this is the end of the line for objects visible to the naked eye, and for this page.  I promise that, no matter how much you zoom out, you will never never get to the Cosmic Microwave Background.")
 
 
 
@@ -146,13 +151,18 @@ def add_local_info(ax):
     plt.text(0,0.51, '500 lyr', color=textcolor, size=fontsize, horizontalalignment='center')
     plt.text(0,0.51, '500 lyr', color=textcolor, size=fontsize, horizontalalignment='center')
     
+    coltmp = '#666666'
+    plt.text(0, -0.68-0.045, 'star positions from', color=coltmp, size=fontsize, horizontalalignment='center')
+    plt.text(0, -0.81-0.045, 'the Hipparcos sattelite', color=coltmp, size=fontsize, horizontalalignment='center')
 
     x0=-2.6; y0=0.4
     text_rectangle(x0, y0, charwidth, fontsize, textcolor, yspacing, 'The stars you can see with your naked eye are typically several hundreds of light-years away.')
     text_rectangle(x0, y0-0.55, charwidth, fontsize, '#FFFFFC', yspacing, 'The white stars show what you might see from a city,')
     text_rectangle(x0, y0-0.85, charwidth, fontsize, '#FFFFFC', yspacing, 'the yellow stars from the country.')
-    #text_rectangle(x0, -1, charwidth, fontsize, 'gray', yspacing, 'Zoom and drag to explore.')
-    text_rectangle(x0, -1, charwidth, fontsize, 'gray', yspacing, 'Zoom in and out to explore.')
+
+
+
+    text_rectangle(x0, -1, charwidth, fontsize, '#666666', yspacing, 'Zoom in and out to explore.')
     text_rectangle(1.0, 0.03, 4*charwidth, fontsize, '#995555', yspacing, '>  to the center of the Milky Way  >')
 
 
