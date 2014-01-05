@@ -114,7 +114,7 @@ def draw_galaxy(ax):
     #y0=d_up_m31+2.2
     x0=-2.32
     y0=d_up_m31+1.2
-    text_rectangle(d_right_m31+x0, y0, charwidth, fontsize, textcolor, yspacing, "The Andromeda Galaxy is the nearest spiral galaxy to the Milky Way but is still very far away, about 2.5 million light-years.  It is by far the most distanct object visible to the naked eye, and the light we see from it was produced way back hominids were first learning to use stone tools.")
+    text_rectangle(d_right_m31+x0, y0, charwidth+3, fontsize, textcolor, yspacing, "The Andromeda Galaxy is the nearest spiral galaxy to the Milky Way but is still very far away, about 2.5 million light-years.  It is by far the most distanct object visible to the naked eye, and the light we see from it was produced way back when hominid pre-humans were first learning to use stone tools.")
 
     text_rectangle(d_right_m31+x0, y0-1.6, charwidth, fontsize, textcolor, yspacing, "It's incredible that, thanks to some fluke of physics and evolution, we can see this far with our eyeballs!")
 
