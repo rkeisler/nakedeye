@@ -165,7 +165,7 @@ def convert_to_html_and_open(fig):
     file.write('<style>body{background-color:#111111;color:#333333;font-size:10pt;font-family:sans-serif}')
     file.write('a{color:#444444;text-decoration:none;}</style>')
     file.write(html)
-    file.write("How Far Can You See? <a href=https://github.com/rkeisler/nakedeye target='_blank'>made in python/d3</a> by <a href=https://twitter.com/RyanKeisler target='_blank'>@RyanKeisler</a> using <a href=https://twitter.com/jakevdp target='_blank'>@jakevdp's</a> awesome <a href=https://github.com/jakevdp/mpld3 target='_blank'>mpld3</a> library.")
+    file.write("How Far Can You See? <a href=https://github.com/rkeisler/nakedeye target='_blank'>made in python/d3</a> by <a href=https://twitter.com/RyanKeisler target='_blank'>@RyanKeisler</a> using <a href=https://twitter.com/jakevdp target='_blank'>@jakevdp's</a> awesome <a href=https://github.com/jakevdp/mpld3 target='_blank'>mpld3</a> library.  work in progress.")
     file.close()
     system('open index.html')
 
