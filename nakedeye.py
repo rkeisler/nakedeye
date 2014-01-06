@@ -44,7 +44,7 @@ def draw_galaxy(ax):
     nell = 5
     for w,h in zip(1.3*np.linspace(4,8,nell), np.linspace(4,8,nell)):
         ax.add_patch(Ellipse(xy=(klyr_to_center,0), width=w, height=h, angle=0, color='white', alpha=alpha))
-    text_rectangle(klyr_to_center+0.1, 0.3, charwidth, fontsize, textcolor, yspacing, 'The center of the Milky Way is about 30,000 light-years away, and the light we see from it today was emitted around the time that humans began farming.')
+    text_rectangle(klyr_to_center+0.1, 0.3, charwidth-2, fontsize, textcolor, yspacing, 'The center of the Milky Way is about 30,000 light-years away, and the light we see from it today was emitted back when humans began farming.')
 
     # LMC
     ra_lmc = 80.893
@@ -162,8 +162,10 @@ def convert_to_html_and_open(fig):
     from mpld3 import fig_to_d3
     html = fig_to_d3(fig)
     file=open('index.html','w')
-    file.write('<style type="text/css">@import url("custom.css");</style>')
+    file.write('<style>body{background-color:#111111;color:#333333;font-size:10pt;font-family:sans-serif}')
+    file.write('a{color:#444444;text-decoration:none;}</style>')
     file.write(html)
+    file.write("How Far Can You See? <a href=https://github.com/rkeisler/nakedeye target='_blank'>made in python/d3</a> by <a href=https://twitter.com/RyanKeisler target='_blank'>@RyanKeisler</a> using <a href=https://twitter.com/jakevdp target='_blank'>@jakevdp's</a> awesome <a href=https://github.com/jakevdp/mpld3 target='_blank'>mpld3</a> library.")
     file.close()
     system('open index.html')
 
@@ -180,8 +182,8 @@ def initialize_figure():
     aratio = 1.9
     sf = 6.5
     minx=-2.9;maxx=2.9
-    miny=-0.5*(maxx-minx)/aratio;
-    maxy=0.5*(maxx-minx)/aratio;
+    miny=-0.6*(maxx-minx)/aratio;
+    maxy=0.4*(maxx-minx)/aratio;
     fig = plt.figure(frameon=False, figsize=(aratio*sf,1.*sf))
     ax = plt.Axes(fig, [0., 0., 1., 1.])
     ax.set_axis_off()
