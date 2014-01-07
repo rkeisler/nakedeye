@@ -25,7 +25,7 @@ def main():
     fig, ax = initialize_figure()
     draw_galaxy(ax)
     plot_stars(ax, d_right, d_up, mag, mag_min=-99, mag_max=3.0, color='#FFFFFC', psize=16, alpha=0.6)
-    plot_stars(ax, d_right, d_up, mag, mag_min=3.0, mag_max=6.0, color='#FFCC66', psize=5, alpha=0.3)
+    plot_stars(ax, d_right, d_up, mag, mag_min=3.0, mag_max=6.0, color='#FFCC66', psize=5, alpha=0.3, stride=1)
     add_local_info(ax)
     convert_to_html_and_open(fig)
 
@@ -171,8 +171,9 @@ def convert_to_html_and_open(fig):
 
 
 def plot_stars(ax, d_right, d_up, mag, mag_min=0, mag_max=3.0, 
-               color='#FFFF99', psize=6, alpha=0.3):
+               color='#FFFF99', psize=6, alpha=0.3, stride=1):
     wh=np.where((mag>mag_min)&(mag<=mag_max))[0]
+    wh=wh[0:-1:stride]
     plt.scatter(d_right[wh], d_up[wh], 
                 alpha=alpha, s=psize, 
                 color=color, linewidths=0)
