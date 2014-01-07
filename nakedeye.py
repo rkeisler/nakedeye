@@ -133,7 +133,7 @@ def add_local_info(ax):
     plt.text(0,0.51, '500 lyr', color=textcolor, size=fontsize, horizontalalignment='center')
     coltmp = '#666666'
     plt.text(0, -0.68-0.045, 'star positions from', color=coltmp, size=fontsize, horizontalalignment='center')
-    plt.text(0, -0.81-0.045, 'the Hipparcos sattelite', color=coltmp, size=fontsize, horizontalalignment='center')
+    plt.text(0, -0.81-0.045, 'the Hipparcos satellite', color=coltmp, size=fontsize, horizontalalignment='center')
     x0=-2.6; y0=0.4
     text_rectangle(x0, y0, charwidth, fontsize, textcolor, yspacing, 'The stars you can see with your naked eye are typically several hundreds of light-years away.')
     text_rectangle(x0, y0-0.55, charwidth, fontsize, '#FFFFFC', yspacing, 'The white stars show what you might see from a city,')
@@ -165,7 +165,7 @@ def convert_to_html_and_open(fig):
     file.write('<style>body{background-color:#111111;color:#333333;font-size:10pt;font-family:sans-serif}')
     file.write('a{color:#444444;text-decoration:none;}</style>')
     file.write(html)
-    file.write("How Far Can You See? <a href=https://github.com/rkeisler/nakedeye target='_blank'>made in python/d3</a> by <a href=https://twitter.com/RyanKeisler target='_blank'>@RyanKeisler</a> using <a href=https://twitter.com/jakevdp target='_blank'>@jakevdp's</a> awesome <a href=https://github.com/jakevdp/mpld3 target='_blank'>mpld3</a> library.  work in progress.")
+    file.write("How Far Can You See? <a href=https://github.com/rkeisler/nakedeye target='_blank'>made in python/d3</a> by <a href=https://twitter.com/RyanKeisler target='_blank'>@RyanKeisler</a> using <a href=https://twitter.com/jakevdp target='_blank'>@jakevdp's</a> awesome <a href=https://github.com/jakevdp/mpld3 target='_blank'>mpld3</a> library.  work in progress.  <br>  if you don't see a map of stars, try refreshing.")
     file.close()
     system('open index.html')
 
