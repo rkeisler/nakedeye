@@ -45,6 +45,8 @@ def draw_galaxy(ax):
     for w,h in zip(1.3*np.linspace(4,8,nell), np.linspace(4,8,nell)):
         ax.add_patch(Ellipse(xy=(klyr_to_center,0), width=w, height=h, angle=0, color='white', alpha=alpha))
     text_rectangle(klyr_to_center+0.1, 0.3, charwidth-2, fontsize, textcolor, yspacing, 'The center of the Milky Way is about 30,000 light-years away, and the light we see from it today was emitted back when humans began farming.')
+    text_rectangle(klyr_to_center, -1.12, 4*charwidth, fontsize, '#995555', yspacing, 'more down this way.')
+    text_rectangle(klyr_to_center, -1.12-0.17, 4*charwidth, fontsize, '#995555', yspacing, 'zoom way out.')
 
     # LMC
     ra_lmc = 80.893
@@ -131,6 +133,8 @@ def add_local_info(ax):
     plt.text(0,0.21, '200 lyr', color=textcolor, size=fontsize, horizontalalignment='center')
     plt.text(0,0.51, '500 lyr', color=textcolor, size=fontsize, horizontalalignment='center')
     plt.text(0,0.51, '500 lyr', color=textcolor, size=fontsize, horizontalalignment='center')
+    plt.text(0,-0.007, '.', color='#0000CC', size=fontsize, horizontalalignment='center')
+
     coltmp = '#666666'
     plt.text(0, -0.68-0.045, 'star positions from', color=coltmp, size=fontsize, horizontalalignment='center')
     plt.text(0, -0.81-0.045, 'the Hipparcos satellite', color=coltmp, size=fontsize, horizontalalignment='center')
@@ -140,8 +144,7 @@ def add_local_info(ax):
     text_rectangle(x0, y0-0.85, charwidth, fontsize, '#FFFFFC', yspacing, 'the yellow stars from the country.')
     text_rectangle(x0, -1, charwidth, fontsize, '#666666', yspacing, 'Zoom in and out to explore.')
     text_rectangle(1.0, 0.06, 4*charwidth, fontsize, '#995555', yspacing, '>  to the center of the Milky Way  >')
-    text_rectangle(1.0, -0.14, 4*charwidth, fontsize, '#995555', yspacing, '>  check it out  >')
-
+    text_rectangle(1.0, -0.14, 4*charwidth, fontsize, '#995555', yspacing, '>  zoom out, drag right  >')
 
 def text_rectangle(x, y, charwidth, fontsize, color, yspacing, thetext):
     words = thetext.split(' ')
