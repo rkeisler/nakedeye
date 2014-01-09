@@ -133,7 +133,9 @@ def add_local_info(ax):
     plt.text(0,0.21, '200 lyr', color=textcolor, size=fontsize, horizontalalignment='center')
     plt.text(0,0.51, '500 lyr', color=textcolor, size=fontsize, horizontalalignment='center')
     plt.text(0,0.51, '500 lyr', color=textcolor, size=fontsize, horizontalalignment='center')
-    plt.text(0,-0.007, '.', color='#0000CC', size=fontsize, horizontalalignment='center')
+    coltmp = '#333399'
+    plt.text(0,-0.007, '.', color=coltmp, size=fontsize, horizontalalignment='center')
+    plt.text(0,-0.1, 'you', color=coltmp, size=fontsize, horizontalalignment='center')
 
     coltmp = '#666666'
     plt.text(0, -0.68-0.045, 'star positions from', color=coltmp, size=fontsize, horizontalalignment='center')
