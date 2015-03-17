@@ -172,6 +172,8 @@ def convert_to_html_and_open(fig):
     file.write(html)
     file.write("How Far Can You See? <a href=https://github.com/rkeisler/nakedeye target='_blank'>made in python/d3</a> by <a href=https://twitter.com/RyanKeisler target='_blank'>@RyanKeisler</a> using <a href=https://twitter.com/jakevdp target='_blank'>@jakevdp's</a> awesome <a href=https://github.com/jakevdp/mpld3 target='_blank'>mpld3</a> library.  work in progress.  <br>  if you don't see a map of stars, try refreshing.")
     file.close()
+    # I'm not sure why, but this makes it run much faster and more smoothly.
+    system("perl -pi -e 's/stroke-dasharray: 10,0/stroke-dasharray: 0,0/g' index.html")
     system('open index.html')
 
 
