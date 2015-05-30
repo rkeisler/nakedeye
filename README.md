@@ -1,7 +1,7 @@
 nakedeye
 ========
 
-This is code for visualizing how far we can see with the naked eye.  It uses @jakevdp's awesome [mpld3](https://github.com/jakevdp/mpld3) library to convert a lot of python/matplotlib to d3.  Viewable at [stanford.edu/~rkeisler/nakedeye](http://stanford.edu/~rkeisler/nakedeye).
+This is code for visualizing how far we can see with the naked eye.  It uses @jakevdp's awesome [mpld3](https://github.com/jakevdp/mpld3) library to convert a lot of python/matplotlib to d3.  Viewable at [rkeisler.github.io/nakedeye/](http://rkeisler.github.io/nakedeye/).
 
 The star positions (RA, Dec, parallax distance) come from the Hipparcos satellite mission.  I included only stars with parallaxes measured with nominal fractional errors smaller than 20%, which is true for most (85%) of the Vmag<6 stars shown here.  I chose to define "city-viewable" stars as those with Vmag<3 (161 stars), and "country-viewable" stars as Vmag<6 (4129 stars).
 
